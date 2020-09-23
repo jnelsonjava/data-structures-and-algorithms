@@ -82,4 +82,67 @@ public class LinkedListTest {
         assertThrows("should throw an error when k is size of list", Exception.class, () -> testList.kthFromEnd(4));
         assertThrows("should throw an error when given negative input", Exception.class, () ->testList.kthFromEnd(-2));
     }
+
+    @Test public void testZipLists() throws Exception {
+        LinkedList ll1 = new LinkedList();
+        LinkedList ll2 = new LinkedList();
+        assertThrows("both lists being empty should throw exception",
+                Exception.class,
+                () -> LinkedList.zipLists(ll1, ll2));
+
+        ll1.insert(1);
+        assertEquals("should return first list when second is empty", ll1, LinkedList.zipLists(ll1, ll2));
+        assertEquals("should return second list when first is empty", ll1, LinkedList.zipLists(ll2, ll1));
+
+        ll1.append(2);
+        ll2.append(11);
+        ll2.append(22);
+
+        LinkedList outputList = new LinkedList();
+        outputList.insert(1);
+        outputList.append(11);
+        outputList.append(2);
+        outputList.append(22);
+
+        assertEquals("lists should be zipped into one at equal length",
+                outputList.toString(),
+                LinkedList.zipLists(ll1, ll2).toString());
+
+        LinkedList ll3 = new LinkedList();
+        LinkedList ll4 = new LinkedList();
+        ll3.insert(1);
+        ll3.append(2);
+        ll4.append(11);
+        ll4.append(22);
+        ll4.append(33);
+
+        outputList.append(33);
+
+        assertEquals("lists should be zipped into one with varying lengths",
+                outputList.toString(),
+                LinkedList.zipLists(ll3, ll4).toString());
+
+        LinkedList ll5 = new LinkedList();
+        LinkedList ll6 = new LinkedList();
+        ll5.insert(1);
+        ll5.append(2);
+        ll5.append(3);
+        ll5.append(4);
+        ll6.append(11);
+        ll6.append(22);
+        ll6.append(33);
+
+        LinkedList secondOutputList = new LinkedList();
+        secondOutputList.insert(1);
+        secondOutputList.append(11);
+        secondOutputList.append(2);
+        secondOutputList.append(22);
+        secondOutputList.append(3);
+        secondOutputList.append(33);
+        secondOutputList.append(4);
+
+        assertEquals("lists should be zipped into one with varying lengths",
+                secondOutputList.toString(),
+                LinkedList.zipLists(ll5, ll6).toString());
+    }
 }

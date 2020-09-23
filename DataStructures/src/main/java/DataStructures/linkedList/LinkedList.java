@@ -125,4 +125,37 @@ public class LinkedList {
 
         return returnValue;
     }
+
+    public static LinkedList zipLists(LinkedList ll1, LinkedList ll2) throws Exception {
+        if (ll1.head == null && ll2.head == null) {
+            throw new Exception("At least one linked list must contain a value");
+        }
+        if (ll1.head == null) {
+            return ll2;
+        }
+        if (ll2.head == null) {
+            return ll1;
+        }
+
+        Node current1 = ll1.head;
+        Node current2 = ll2.head;
+        Node temp1 = current1.getNext();
+        Node temp2 = current2.getNext();
+
+        while (temp1 != null && temp2 != null) {
+            current1.setNext(current2);
+            current2.setNext(temp1);
+            current1 = temp1;
+            current2 = temp2;
+            temp1 = temp1.getNext();
+            temp2 = temp2.getNext();
+        }
+
+        current1.setNext(current2);
+        if (temp1 != null) {
+            current2.setNext(temp1);
+        }
+
+        return ll1;
+    }
 }
