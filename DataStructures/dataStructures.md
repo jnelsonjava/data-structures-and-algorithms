@@ -10,6 +10,8 @@ Linked list class should also include append to end, insert before an element, a
 
 Linked list class should also include a method to retrieve a value based on distance from the end of the list.
 
+Linked list class should also have a static method allowing for two linked lists to be zipped together into one.
+
 ## Approach & Efficiency
 
 I created a LinkedList class and a Node class. To encapsulate the data in the Node class, I set the fields to private and allowed access to set and get values through the Node's methods. The LinkedList class can be instantiated with a null head field. When the insert method is called, it will set the head field to a new Node and if there was an existing Node then it updates the new Node's next field to point to the previous Node. The include method loops through all existing Nodes and searches for a value returning a boolean. Similarly, the toString method loops through all the Nodes to create a representative String.
@@ -22,6 +24,8 @@ The insertAfter method iterates through the list checking each value. If it find
 
 The kthFromEnd method iterates through the list from the head to find its total length. Then it iterates from the head again until it reaches the list's length less the given integer k. It then returns the value found at that node. If the k given would be outside the list length or if it is negative, the method throws an exception.
 
+The zipLists static method iterates through both input lists and points each Node's next field at the next Node from the other list, returning a LinkedList that is a zipped version of the two input.
+
 Time Efficiency:
   - insert : O(1)
   - includes : O(n)
@@ -30,6 +34,7 @@ Time Efficiency:
   - insertBefore : O(n)
   - insertAfter : O(n)
   - kthFromEnd : O(n)
+  - zipLists : O(n)
 
 Space Efficiency:
   - insert : O(n)
@@ -39,6 +44,7 @@ Space Efficiency:
   - insertBefore : O(1)
   - insertAfter : O(1)
   - kthFromEnd : O(1)
+  - zipLists : O(1)
 
 ## API
 
@@ -50,9 +56,12 @@ LinkedList Methods:
   - insertBefore : Takes in an integer to search for and an integer for a new node, if it finds the search value, it places the new node before it, otherwise it throws an exception.
   - insertAfter : Takes in an integer to search for and an integer for a new node, if it finds the search value, it places the new node after it, otherwise it throws an exception.
   - kthFromEnd : Takes in an integer, k, and returns the value of the node k from the end of the linked list. If k is negative or if k units from the end is outside the list, it throws an exception.
-
+  - zipLists : Static method takes in 2 LinkedList instances and returns 1 LinkedList with the Nodes from the input lists zipped together. Throws an exception if two empty lists are passed.
+  
 ## Solution
 
 <img src="src/main/resources/whiteboard-ch-06.PNG">
 
 <img src="src/main/resources/whiteboard-ch-07.PNG">
+
+<img src="src/main/resources/whiteboard-ch-08.PNG">
