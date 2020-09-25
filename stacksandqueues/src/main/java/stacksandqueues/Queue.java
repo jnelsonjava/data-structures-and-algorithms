@@ -31,4 +31,14 @@ public class Queue {
         if (isEmpty()) throw new NullPointerException();
         return front.getValue();
     }
+
+    @Override
+    public String toString() {
+        return toString(front);
+    }
+
+    private String toString(Node node) {
+        if (node == null) return "NULL";
+        return String.format("%s -> ", node.toString()) + toString(node.getNext());
+    }
 }

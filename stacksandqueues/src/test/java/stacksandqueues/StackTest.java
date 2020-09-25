@@ -56,4 +56,15 @@ public class StackTest {
         assertEquals("should return value of top node", 3, stack.pop());
         assertNull("both nodes should be removed to create empty stack", stack.top);
     }
+
+    @Test public void testToString() {
+        Stack stack = new Stack();
+        assertEquals("NULL", stack.toString());
+
+        stack.push(3);
+        assertEquals("{3} -> NULL", stack.toString());
+
+        stack.push(4);
+        assertEquals("{4} -> {3} -> NULL", stack.toString());
+    }
 }

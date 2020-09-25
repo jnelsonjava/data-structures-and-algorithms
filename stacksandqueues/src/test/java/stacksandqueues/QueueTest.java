@@ -61,4 +61,15 @@ public class QueueTest {
         queue.dequeue(); // new front value 4
         assertEquals("should peek value of front", 4, queue.peek());
     }
+
+    @Test public void testToString() {
+        Queue queue = new Queue();
+        assertEquals("NULL", queue.toString());
+
+        queue.enqueue(3);
+        assertEquals("{3} -> NULL", queue.toString());
+
+        queue.enqueue(4);
+        assertEquals("{3} -> {4} -> NULL", queue.toString());
+    }
 }
