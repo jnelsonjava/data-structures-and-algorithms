@@ -18,3 +18,5 @@ A repo for daily coding challenges geared toward improving competence with data 
   - [Linked Lists](DataStructures/dataStructures.md)
     - Collaborated with Michael Wohl and Paul O'Brien
   - [Stacks and Queues](stacksandqueues/stacksandqueues.md)
+  - [Queue with Stacks](stacksandqueues/pseudoqueue.md)
+    - Collaborated with Claudio Bailon-Schubert
