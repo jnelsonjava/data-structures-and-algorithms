@@ -22,3 +22,4 @@ A repo for daily coding challenges geared toward improving competence with data 
     - Collaborated with Claudio Bailon-Schubert
   - [Animal Shelter Queue](challenges/animalshelter.md)
     - Collaborated with Claudio Bailon-Schubert and Marchael Acode
+  - [Multi Bracket Validation](challenges/multibracketvalidation.md)
