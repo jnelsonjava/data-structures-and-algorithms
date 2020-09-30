@@ -24,5 +24,5 @@ Space Efficiency:
   - dequeue : O(1)
 
 ## Solution
-<!-- Embedded whiteboard image -->
+
 <img src="src/main/resources/whiteboard-ch-11.PNG">
