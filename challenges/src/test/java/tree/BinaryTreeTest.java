@@ -59,4 +59,22 @@ public class BinaryTreeTest {
                 "[1, 3, 2, 5, 7, 6, 4]",
                 tree.postOrder(tree.getRoot(), new ArrayList<Integer>()).toString());
     }
+
+    @Test public void testAddBreadthFirst() {
+        BinaryTree tree = new BinaryTree();
+        tree.addBreadthFirst(4);
+        System.out.println(tree.inOrder(tree.getRoot(), new ArrayList<Integer>()));
+        tree.addBreadthFirst(2);
+        System.out.println(tree.inOrder(tree.getRoot(), new ArrayList<Integer>()));
+        tree.addBreadthFirst(6);
+        System.out.println(tree.inOrder(tree.getRoot(), new ArrayList<Integer>()));
+        tree.addBreadthFirst(1);
+        System.out.println(tree.inOrder(tree.getRoot(), new ArrayList<Integer>()));
+        tree.addBreadthFirst(3);
+        System.out.println(tree.inOrder(tree.getRoot(), new ArrayList<Integer>()));
+        tree.addBreadthFirst(5);
+        System.out.println(tree.inOrder(tree.getRoot(), new ArrayList<Integer>()));
+        tree.addBreadthFirst(7);
+        System.out.println(tree.inOrder(tree.getRoot(), new ArrayList<Integer>()));
+    }
 }
