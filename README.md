@@ -25,3 +25,5 @@ A repo for daily coding challenges geared toward improving competence with data 
   - [Multi Bracket Validation](challenges/multibracketvalidation.md)
   - [Trees](challenges/trees.md)
     - Collaborated with Meghan Domeck
+  - [Find Max Value in Binary Tree](challenges/findmax.md)
+    - Collaborated with Marchael Acode and Chandler Puckett
