@@ -88,6 +88,24 @@ public class BinaryTreeTest {
         assertEquals("should find the max value all the way left", 7, tree3.findMaximumValue());
     }
 
+    @Test public void testToStringBreadthFirstOnEmptyTree() {
+        BinaryTree tree = new BinaryTree();
+        assertEquals("empty tree should return string of null", "null", tree.toStringBreadthFirst());
+    }
+
+    @Test public void testToStringBreadthFirstWithFullTree() {
+        Node rootNode = makeTree();
+        BinaryTree tree = new BinaryTree(rootNode);
+        assertEquals("should print top to bottom, left to right",
+                "[4, 2, 6, 1, 3, 5, 7]",
+                tree.toStringBreadthFirst());
+
+        tree.addBreadthFirst(0);
+        assertEquals("value on new row should print last",
+                "[4, 2, 6, 1, 3, 5, 7, 0]",
+                tree.toStringBreadthFirst());
+    }
+
     @Test public void testAddBreadthFirst() {
         BinaryTree tree = new BinaryTree();
         tree.addBreadthFirst(4);
