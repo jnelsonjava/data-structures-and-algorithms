@@ -2,6 +2,7 @@ package tree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class BinaryTree extends Tree {
     public BinaryTree(Node root) {
@@ -45,6 +46,25 @@ public class BinaryTree extends Tree {
         }
         return right > current.getValue() ? right : current.getValue();
     }
+
+    public String toStringBreadthFirst() {
+        ArrayList<Integer> output = new ArrayList<>();
+        Queue<Node> queue = new LinkedList<>();
+        if (getRoot() == null) {
+            return "null";
+        }
+        queue.add(getRoot());
+        while (!queue.isEmpty()) {
+            Node current = queue.remove();
+            output.add(current.getValue());
+            if (current.getLeft() != null) queue.add(current.getLeft());
+            if (current.getRight() != null) queue.add(current.getRight());
+        }
+
+        return output.toString();
+    }
+
+
 
     public void addBreadthFirst(int value) {
         if (this.getRoot() == null) {
