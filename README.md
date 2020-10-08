@@ -29,3 +29,4 @@ A repo for daily coding challenges geared toward improving competence with data 
     - Collaborated with Marchael Acode and Chandler Puckett
   - [Print Binary Tree Breadth First](challenges/breadthfirst.md)
     - Collaborated with Meghan Domeck
+  - [FizzBuzz Tree](challenges/fizzbuzztree.md)
