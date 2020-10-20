@@ -8,6 +8,11 @@ A repo for daily coding challenges geared toward improving competence with data 
 
 ## Author: Jack Nelson
 
+## Blog
+
+  - [Blog](BLOG.md)
+    - [Insertion Sort](BLOG.md#insertion-sort)
+
 ## Java Challenges Table of Contents:
 
   - [Reverse an Array](challenges/ArrayReverse.md)
