@@ -12,6 +12,7 @@ A repo for daily coding challenges geared toward improving competence with data 
 
   - [Blog](BLOG.md)
     - [Insertion Sort](BLOG.md#insertion-sort)
+    - [Merge Sort](BLOG.md#merge-sort)
 
 ## Java Challenges Table of Contents:
 

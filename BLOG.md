@@ -1,6 +1,7 @@
 # Algorithm Blog
 
   - [Insertion Sort 10/19/20](#insertion-sort)
+  - [Merge Sort 10/19/20](#merge-sort)
 
 ---
 
@@ -44,4 +45,48 @@ Space Efficiency: O(1) - constant
   - The operations are done in place using a few variables to keep track of two indices and the value currently being sorted
 
 ---
+
+## Merge Sort
+
+Merging two sorted arrays into one sorted array is relatively simple. Merge Sort is an algorithm that takes advantage of this by recursively splitting an unsorted array into progressively smaller halves. Any array of length 1 is inherently sorted. So once the input array has been split into arrays with single elements, each of the resulting arrays can be merged back to the full size while maintaining sorted order.
+
+### Pseudo Code Example
+
+<img src="challenges/src/main/resources/27-pseudo-code-sample.PNG">
+
+### Java Code Sample
+
+<img src="challenges/src/main/resources/27-java-code-sample-1.PNG">
+
+#### Merging Helper Function
+
+<img src="challenges/src/main/resources/27-java-code-sample-2.PNG">
+
+### Walkthrough
+
+<img src="challenges/src/main/resources/27-whiteboard.PNG">
+
+In this sample, the input array is `[8, 4, 23, 42, 16, 15]`. At a high level, mergeSort takes the input array, splits it in half, calls mergeSort on both halves, and merges the sorted result. Obviously it goes a bit further than that, so let's follow the left half down the stack.
+
+The first `left` to get mergeSorted is `[8, 4, 23]`. This in turn goes through the same process and splits into `[8]` and `[4, 23]`. Looks like we'll need to keep going. We'll follow the new left, `[8]`.
+
+This left is the first we've encountered with a length of 1. That is our base case! Because it's already sorted, it immediately exits, leaving the left array as is.
+
+So now we'll follow the right, `[4, 23]`. Its length is still greater than 1, so it splits into `[4]` and  `[23]`. Since each of these are length 1, they'll both stay the same similarly to the `[8]` we followed previously.
+
+Now that we have found both a left and a right that did not change, they're ready to merge. The merge function is called and overwrites `[4, 23]` with the values in `[4]` and `[23]` in sorted order (which is still `[4, 23]`). This is the right to match the left of `[8]`.
+
+The left `[8]` now merges with right `[4, 23]`, resulting in `[4, 8, 23]`. And that is the whole left side of the input array sorted. Once the right side goes through the same process, it looks like `[15, 16, 42]`. And the final merge of those results in our output, `[4, 8, 15, 16, 23, 42]`.
+
+### Efficiency
+
+Time Efficiency: O(nlogn) - linearithmic
+  - The merge helper function is in linear time because it sets each value based on a simple comparison
+  - The merge gets called (logn) times due to the recursive halving of the array
+  - Combining those, we come to O(nlogn)
+
+Space Efficiency: O(n) - linear
+  - While it looks like there will be more space used, the recursion depth is (logn)
+  - The stack will resolve its left route before entering its right route, maintaining a relative amount of space needed to the size of the input array
+
 
