@@ -2,6 +2,7 @@
 
   - [Insertion Sort 10/19/20](#insertion-sort)
   - [Merge Sort 10/19/20](#merge-sort)
+  - [Quick Sort 10/19/20](#quick-sort)
 
 ---
 
@@ -89,4 +90,42 @@ Space Efficiency: O(n) - linear
   - While it looks like there will be more space used, the recursion depth is (logn)
   - The stack will resolve its left route before entering its right route, maintaining a relative amount of space needed to the size of the input array
 
+---
 
+## Quick Sort
+
+Quick Sort is a sorting algorithm that operates by taking a value from the array, called the pivot, and using it as reference for a series of swaps. Any value lower than the pivot gets swapped into the lower portion of the array until all values are checked. Then the pivot is added at the end of the lower values. This results in all the values to the left of the pivot being lower than it and all values to the right are higher, meaning the pivot is exactly where it needs to be in the end. Then quick sort just needs to be run to the left and the right of the pivot recursively to finish the sort.
+
+### Pseudo Code Example
+
+<img src="challenges/src/main/resources/28-pseudo-code-sample.PNG">
+
+### Java Code Sample
+
+<img src="challenges/src/main/resources/28-java-code-sample-1.PNG">
+
+### Walkthrough
+
+<img src="challenges/src/main/resources/28-whiteboard-full.PNG">
+
+In this sample, the input array is `[8, 4, 23, 42, 16, 15]`. The pivot for this implementation is the right most value, 15. The first value, 8, is compared to the pivot and it's lower. So the 8 is set into the first array postition. Since it's already there, there's no visible effect.
+
+The same thing happens with the 4. It's less than 15, so it's set in the next available array position, which is where it already was. So still no visible effect. 
+
+The next 3 values are all higher than the pivot, leaving only the final step of the round. The pivot is then swapped with the first higher value, the 23. Now the 15 is the 3rd element in the array and is sorted.
+
+The same process is to the left and right of the pivot. The pivot for the left is 4 which results in a swap with the 8. The 4 being set correct, the 8 is treated as the next pivot. However, since the 8 has pivots to its left and right, it immediately resolves because it must be in the correct location.
+
+The same process happens on the right side of the origin pivot. 23 is the new pivot, resulting in the 16 swapping left and the 42 swapping right. And the next round, both the 16 and 42 immediately resolve because they are sandwiched between known good positions.
+
+The amazing advantage to this is that every round of sorting positions one element into its final location. But it also organizes other elements in the process. Each round ideally makes future rounds require less checks.
+
+### Efficiency
+
+Time Efficiency: O(n<sup>2</sup>) - exponential
+  - It's possible for this algorithm to run in (nlogn) time
+  - Unfortunately, if the input is already sorted, this implementation reaches exponential time
+
+Space Efficiency: O(logn) - logarithmic
+  - While it looks like there will be more space used, the recursion depth is (logn)
+  - The stack will resolve its left route before entering its right route, maintaining a relative amount of space needed to the size of the input array
