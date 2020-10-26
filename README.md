@@ -37,3 +37,4 @@ A repo for daily coding challenges geared toward improving competence with data 
   - [Print Binary Tree Breadth First](challenges/breadthfirst.md)
     - Collaborated with Meghan Domeck
   - [FizzBuzz Tree](challenges/fizzbuzztree.md)
+  - [Hashtables](DataStructures/hashtables.md)
