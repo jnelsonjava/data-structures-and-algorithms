@@ -38,3 +38,5 @@ A repo for daily coding challenges geared toward improving competence with data 
     - Collaborated with Meghan Domeck
   - [FizzBuzz Tree](challenges/fizzbuzztree.md)
   - [Hashtables](DataStructures/hashtables.md)
+  - [Repeat Word Finder](challenges/repeatword.md)
+    - Collaborated with Garhett Morgan
