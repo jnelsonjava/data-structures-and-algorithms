@@ -19,6 +19,20 @@ If the key is found, then the value stored in the same node is returned. Otherwi
 
 The contains method follows the same logical pattern as the get method: hashing and searching for a key. The method returns true if the key is found and false if not.
 
+Time efficiency is constant for initial use, but will very gradually increase with collisions (multiple nodes stored in the same child bucket).
+
+The space efficiency is also constant, but it's worth noting that the initial instance of this Hashtable will create a batch of lists.
+
+Time Efficiency:
+  - add : O(1)
+  - get : O(1)
+  - contains : O(1)
+
+Space Efficiency:
+  - add : O(1)
+  - get : O(1)
+  - contains : O(1)
+
 ## API
 
 Hashtable Methods:
