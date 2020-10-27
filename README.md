@@ -40,3 +40,4 @@ A repo for daily coding challenges geared toward improving competence with data 
   - [Hashtables](DataStructures/hashtables.md)
   - [Repeat Word Finder](challenges/repeatword.md)
     - Collaborated with Garhett Morgan
+  - [Tree Intersection](challenges/treeintersection.md)
