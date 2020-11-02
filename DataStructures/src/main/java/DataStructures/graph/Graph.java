@@ -53,9 +53,24 @@ public class Graph {
             GraphEdge edge = new GraphEdge(value, destination, weight);
             edges.add(edge);
         }
+
+        public String getValue() {
+            return value;
+        }
+
+        public HashSet<GraphEdge> getEdges() {
+            return edges;
+        }
+
+        @Override
+        public String toString() {
+            return "GraphNode{" +
+                    "value='" + value + '\'' +
+                    '}';
+        }
     }
 
-    static class GraphEdge {
+    public static class GraphEdge {
         String origin;
         GraphNode destination;
         int weight = 1; // defaults to weight of 1 if not specified
@@ -69,6 +84,18 @@ public class Graph {
             this.origin = origin;
             this.destination = destination;
             this.weight = weight;
+        }
+
+        public String getOrigin() {
+            return origin;
+        }
+
+        public GraphNode getDestination() {
+            return destination;
+        }
+
+        public int getWeight() {
+            return weight;
         }
     }
 }
