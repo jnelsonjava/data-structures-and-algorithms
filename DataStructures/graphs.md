@@ -7,7 +7,8 @@ A data structure for representing nodes and their unique connections
 Implement a graph with methods to add nodes, add edges between nodes, get a collection of all nodes, get neighbors of a given node, and check the size of the graph.
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+[Link to Code](src/main/java/DataStructures/graph/Graph.java)
 
 I created the main Graph class and added a GraphNode class and GraphEdge class. The Graph simply tracks a set of GraphNodes as they are added. The GraphNodes each contain a value and a set of GraphEdges. The GraphEdges are created to represent connections between GraphNodes. Each GraphEdge contains a string referencing the value of its origin GraphNode, a pointer to its destination GraphNode, and an integer with the weight of the connection.
 
