@@ -42,3 +42,5 @@ A repo for daily coding challenges geared toward improving competence with data 
     - Collaborated with Garhett Morgan
   - [Tree Intersection](challenges/treeintersection.md)
   - [Left Join](challenges/leftjoin.md)
+  - [Graphs](DataStructures/graphs.md)
+

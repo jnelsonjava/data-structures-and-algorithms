@@ -14,13 +14,13 @@ public class Graph {
     public void addEdge(GraphNode nodeA, GraphNode nodeB) {
         if (!nodes.contains(nodeA) || !nodes.contains(nodeB)) throw new NullPointerException("GraphNode not contained in Graph");
         nodeA.addEdge(nodeB);
-        nodeB.addEdge(nodeA);
+        if (nodeA != nodeB) nodeB.addEdge(nodeA);
     }
 
     public void addEdge(GraphNode nodeA, GraphNode nodeB, int weight) {
         if (!nodes.contains(nodeA) || !nodes.contains(nodeB)) throw new NullPointerException("GraphNode not contained in Graph");
         nodeA.addEdge(nodeB, weight);
-        nodeB.addEdge(nodeA, weight);
+        if (nodeA != nodeB) nodeB.addEdge(nodeA, weight);
     }
 
     public HashSet<GraphNode> getNodes() {
@@ -36,7 +36,7 @@ public class Graph {
         return nodes.size();
     }
 
-    static class GraphNode {
+    public static class GraphNode {
         String value;
         HashSet<GraphEdge> edges = new HashSet<>();
 
@@ -45,27 +45,27 @@ public class Graph {
         }
 
         void addEdge(GraphNode destination) {
-            GraphEdge edge = new GraphEdge(value, destination.value);
+            GraphEdge edge = new GraphEdge(value, destination);
             edges.add(edge);
         }
 
         void addEdge(GraphNode destination, int weight) {
-            GraphEdge edge = new GraphEdge(value, destination.value, weight);
+            GraphEdge edge = new GraphEdge(value, destination, weight);
             edges.add(edge);
         }
     }
 
     static class GraphEdge {
         String origin;
-        String destination;
+        GraphNode destination;
         int weight = 1; // defaults to weight of 1 if not specified
 
-        GraphEdge(String origin, String destination) {
+        GraphEdge(String origin, GraphNode destination) {
             this.origin = origin;
             this.destination = destination;
         }
 
-        GraphEdge(String origin, String destination, int weight) {
+        GraphEdge(String origin, GraphNode destination, int weight) {
             this.origin = origin;
             this.destination = destination;
             this.weight = weight;
