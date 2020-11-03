@@ -43,4 +43,6 @@ A repo for daily coding challenges geared toward improving competence with data 
   - [Tree Intersection](challenges/treeintersection.md)
   - [Left Join](challenges/leftjoin.md)
   - [Graphs](DataStructures/graphs.md)
+  - [Breadth First Graph Traversal](DataStructures/breadthfirsttraversal.md)
+    - Collaborated with Michael Wohl
 
