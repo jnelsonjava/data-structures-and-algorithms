@@ -46,5 +46,6 @@ A repo for daily coding challenges geared toward improving competence with data 
   - [Breadth First Graph Traversal](DataStructures/breadthfirsttraversal.md)
     - Collaborated with Michael Wohl
   - [Check Flight Paths](DataStructures/flightpaths.md)
+  - [Traverse Graph Depth First](DataStructures/depth-first-graph-traverse.md)
 
 
