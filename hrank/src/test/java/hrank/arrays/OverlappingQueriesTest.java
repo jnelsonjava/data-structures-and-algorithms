@@ -2,9 +2,6 @@ package hrank.arrays;
 
 import org.junit.Test;
 
-import java.util.Map;
-import java.util.TreeMap;
-
 import static org.junit.Assert.assertEquals;
 
 public class OverlappingQueriesTest {
